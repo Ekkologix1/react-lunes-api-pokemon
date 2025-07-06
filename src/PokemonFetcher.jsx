@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Animaciones/PokemonFetcher.css';
-import './Animaciones/Animaciones.css';
-import './Animaciones/Animaciones3D.css';
-
+import './Animaciones/Main.css';
 const PokemonFetcher = () => {
 const [pokemones, setPokemones] = useState([]);
 const [cargando, setCargando] = useState(true);

@@ -1,15 +1,18 @@
-/* PokemonCard.css - Estilos para las tarjetas de Pokémon */
+/* PokemonCard.css - Estilos para las tarjetas de Pokémon CORREGIDO */
 
 .pokemon-card {
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  /* Tamaño más pequeño */
+  max-width: 220px;
+  margin: 0 auto;
 }
 
 .pokemon-card::before {
@@ -28,36 +31,42 @@
   transform: translateX(100%);
 }
 
+/* Hover simplificado - sin transformaciones 3D extremas */
 .pokemon-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .pokemon-card h3 {
   color: #2c3e50;
   margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 1.4em;
+  margin-bottom: 10px;
+  font-size: 1.1em;
   font-weight: bold;
+  text-align: center;
 }
 
 .pokemon-card img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
-  margin: 15px 0;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  margin: 10px 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pokemon-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .pokemon-card p {
-  font-size: 1em;
+  font-size: 0.9em;
   color: #34495e;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
 .pokemon-card p strong {
@@ -66,7 +75,7 @@
 
 /* Sección de captura */
 .capture-section {
-  margin-top: 15px;
+  margin-top: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,8 +84,9 @@
 .captured-status {
   background: linear-gradient(135deg, #00b894, #00cec9);
   color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 6px 12px;
+  border-radius: 15px;
   font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+  font-size: 0.8em;
+  box-shadow: 0 3px 10px rgba(0, 184, 148, 0.3);
 }
