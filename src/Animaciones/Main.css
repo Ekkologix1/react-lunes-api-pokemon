@@ -1,0 +1,12 @@
+/* Main.css - Archivo principal que importa todos los estilos */
+
+/* Importar todos los archivos CSS modulares */
+@import './Layout.css';
+@import './PokemonCard.css';
+@import './Pokeballs.css';
+@import './Buttons.css';
+@import './Missions.css';
+@import './Experience.css';
+@import './Notifications.css';
+@import './Animations.css';
+@import './Responsive.css';

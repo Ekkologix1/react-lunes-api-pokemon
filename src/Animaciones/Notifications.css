@@ -1,0 +1,23 @@
+/* Notifications.css - Estilos para notificaciones */
+
+.notification {
+position: fixed;
+top: 20px;
+right: 20px;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+padding: 15px 20px;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+z-index: 1000;
+animation: pokemon-appear 0.5s ease-out;
+}
+
+.notification.level-up {
+background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+color: #333;
+}
+
+.notification.mission-complete {
+background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}

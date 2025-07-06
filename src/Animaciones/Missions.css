@@ -1,0 +1,33 @@
+/* Missions.css - Estilos para misiones */
+
+.mission-card {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+padding: 15px;
+border-radius: 10px;
+margin: 10px 0;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+transition: transform 0.2s ease;
+}
+
+.mission-card:hover {
+transform: translateY(-2px);
+}
+
+.mission-card.completed {
+background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.mission-progress {
+background-color: rgba(255, 255, 255, 0.2);
+border-radius: 10px;
+padding: 5px;
+margin-top: 10px;
+}
+
+.mission-progress-bar {
+background: linear-gradient(90deg, #ffd700, #ffed4a);
+height: 6px;
+border-radius: 3px;
+transition: width 0.3s ease;
+}
