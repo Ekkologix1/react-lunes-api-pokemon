@@ -1,87 +1,507 @@
-/* Animations.css - Todas las animaciones */
+/* Animations.css - Todas las animaciones con efectos 3D avanzados */
 
-/* Animación de la pokeball */
-@keyframes pokeball-bounce {
+/* ========== ANIMACIONES 3D BÁSICAS ========== */
+
+/* Animación 3D mejorada de la pokeball */
+@keyframes pokeball-bounce-3d {
 0% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px) rotate(0deg) rotateX(0deg) rotateY(0deg) scale(1);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
 }
 25% {
-    transform: translateY(-15px) rotate(90deg);
+    transform: translateY(-20px) rotate(90deg) rotateX(15deg) rotateY(45deg) scale(1.1);
+    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.5);
 }
 50% {
-    transform: translateY(-30px) rotate(180deg);
+    transform: translateY(-35px) rotate(180deg) rotateX(30deg) rotateY(90deg) scale(1.2);
+    box-shadow: 0 25px 45px rgba(255, 255, 255, 0.7);
 }
 75% {
-    transform: translateY(-15px) rotate(270deg);
+    transform: translateY(-20px) rotate(270deg) rotateX(15deg) rotateY(135deg) scale(1.1);
+    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.5);
 }
 100% {
-    transform: translateY(0px) rotate(360deg);
+    transform: translateY(0px) rotate(360deg) rotateX(0deg) rotateY(180deg) scale(1);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
 }
 }
 
-/* Animación de captura */
-@keyframes capture-flash {
+/* Animación 3D de captura mejorada */
+@keyframes capture-flash-3d {
 0% {
     background-color: transparent;
-    transform: scale(1);
+    transform: scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+}
+25% {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05) rotateX(15deg) rotateY(15deg) rotateZ(5deg);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.4);
 }
 50% {
-    background-color: rgba(255, 255, 255, 0.8);
-    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.15) rotateX(30deg) rotateY(30deg) rotateZ(10deg);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.8);
+}
+75% {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.08) rotateX(15deg) rotateY(15deg) rotateZ(5deg);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.6);
 }
 100% {
     background-color: transparent;
-    transform: scale(1);
+    transform: scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
 }
 }
 
-/* Animación de aparición de Pokémon */
-@keyframes pokemon-appear {
+/* Animación 3D de aparición de Pokémon mejorada */
+@keyframes pokemon-appear-3d {
 0% {
     opacity: 0;
-    transform: scale(0.5) translateY(20px);
+    transform: scale(0.1) rotateY(-180deg) translateZ(-100px) translateY(50px);
+    filter: blur(15px) brightness(0.3);
+}
+25% {
+    opacity: 0.4;
+    transform: scale(0.6) rotateY(-90deg) translateZ(-50px) translateY(20px);
+    filter: blur(8px) brightness(0.6);
+}
+50% {
+    opacity: 0.8;
+    transform: scale(1.1) rotateY(0deg) translateZ(10px) translateY(-10px);
+    filter: blur(3px) brightness(1.2);
+}
+75% {
+    opacity: 0.95;
+    transform: scale(1.05) rotateY(15deg) translateZ(5px) translateY(-5px);
+    filter: blur(1px) brightness(1.1);
 }
 100% {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: scale(1) rotateY(0deg) translateZ(0) translateY(0);
+    filter: blur(0) brightness(1);
 }
 }
 
-/* Animación de subida de nivel */
-@keyframes level-up {
+/* Animación 3D de subida de nivel mejorada */
+@keyframes level-up-3d {
 0% {
-    transform: scale(1);
+    transform: scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     color: #333;
+    text-shadow: 0 0 0 rgba(255, 215, 0, 0);
+}
+25% {
+    transform: scale(1.1) rotateX(10deg) rotateY(10deg) rotateZ(5deg);
+    color: #ff6b6b;
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
 }
 50% {
-    transform: scale(1.2);
+    transform: scale(1.3) rotateX(20deg) rotateY(20deg) rotateZ(10deg);
     color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+75% {
+    transform: scale(1.2) rotateX(15deg) rotateY(15deg) rotateZ(5deg);
+    color: #00b894;
+    text-shadow: 0 0 15px rgba(0, 184, 148, 0.6);
 }
 100% {
-    transform: scale(1);
+    transform: scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     color: #333;
+    text-shadow: 0 0 5px rgba(0, 184, 148, 0.3);
 }
 }
 
-/* Animación de la barra de experiencia */
-@keyframes exp-bar-fill {
+/* ========== ANIMACIONES 3D AVANZADAS ========== */
+
+/* Animación 3D de rotación con profundidad */
+@keyframes rotate-3d-depth {
+0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0);
+}
+25% {
+    transform: rotateX(15deg) rotateY(90deg) rotateZ(15deg) translateZ(30px);
+}
+50% {
+    transform: rotateX(30deg) rotateY(180deg) rotateZ(30deg) translateZ(60px);
+}
+75% {
+    transform: rotateX(15deg) rotateY(270deg) rotateZ(15deg) translateZ(30px);
+}
+100% {
+    transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) translateZ(0);
+}
+}
+
+/* Animación de cubo 3D */
+@keyframes cube-flip-3d {
+0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+25% {
+    transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+}
+50% {
+    transform: rotateX(90deg) rotateY(90deg) rotateZ(0deg);
+}
+75% {
+    transform: rotateX(0deg) rotateY(90deg) rotateZ(90deg);
+}
+100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+}
+
+/* Animación de flotación 3D */
+@keyframes float-3d {
+0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+25% {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg) rotateZ(2deg);
+}
+50% {
+    transform: translateY(-20px) rotateX(10deg) rotateY(10deg) rotateZ(5deg);
+}
+75% {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg) rotateZ(2deg);
+}
+}
+
+/* Animación de pulso 3D */
+@keyframes pulse-3d {
+0%, 100% {
+    transform: scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+}
+25% {
+    transform: scale(1.05) rotateX(5deg) rotateY(5deg) rotateZ(2deg);
+    box-shadow: 0 0 0 10px rgba(255, 107, 107, 0.5);
+}
+50% {
+    transform: scale(1.1) rotateX(10deg) rotateY(10deg) rotateZ(5deg);
+    box-shadow: 0 0 0 20px rgba(255, 107, 107, 0.3);
+}
+75% {
+    transform: scale(1.05) rotateX(5deg) rotateY(5deg) rotateZ(2deg);
+    box-shadow: 0 0 0 15px rgba(255, 107, 107, 0.1);
+}
+}
+
+/* Animación de ondas 3D */
+@keyframes wave-3d {
+0%, 100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(0);
+}
+25% {
+    transform: rotateX(10deg) rotateY(15deg) rotateZ(5deg) translateZ(20px);
+}
+50% {
+    transform: rotateX(20deg) rotateY(30deg) rotateZ(10deg) translateZ(40px);
+}
+75% {
+    transform: rotateX(10deg) rotateY(15deg) rotateZ(5deg) translateZ(20px);
+}
+}
+
+/* ========== ANIMACIONES DE PARTÍCULAS 3D ========== */
+
+/* Partículas de captura 3D */
+@keyframes capture-particles-3d {
+0% {
+    transform: scale(0) rotate(0deg) translateZ(0);
+    opacity: 1;
+}
+25% {
+    transform: scale(0.5) rotate(90deg) translateZ(20px);
+    opacity: 0.8;
+}
+50% {
+    transform: scale(1) rotate(180deg) translateZ(40px);
+    opacity: 0.6;
+}
+75% {
+    transform: scale(1.5) rotate(270deg) translateZ(60px);
+    opacity: 0.4;
+}
+100% {
+    transform: scale(2) rotate(360deg) translateZ(80px);
+    opacity: 0;
+}
+}
+
+/* Partículas de nivel 3D */
+@keyframes level-particles-3d {
+0% {
+    transform: translateY(0) translateZ(0) scale(0) rotate(0deg);
+    opacity: 1;
+}
+25% {
+    transform: translateY(-20px) translateZ(30px) scale(0.5) rotate(90deg);
+    opacity: 0.8;
+}
+50% {
+    transform: translateY(-40px) translateZ(60px) scale(1) rotate(180deg);
+    opacity: 0.6;
+}
+75% {
+    transform: translateY(-60px) translateZ(90px) scale(1.5) rotate(270deg);
+    opacity: 0.4;
+}
+100% {
+    transform: translateY(-80px) translateZ(120px) scale(2) rotate(360deg);
+    opacity: 0;
+}
+}
+
+/* ========== ANIMACIONES DE BARRA DE EXPERIENCIA 3D ========== */
+
+/* Barra de experiencia con efecto 3D */
+@keyframes exp-bar-fill-3d {
 0% {
     width: 0%;
+    transform: rotateX(0deg) translateZ(0);
+    box-shadow: 0 0 0 rgba(76, 175, 80, 0);
+}
+25% {
+    width: 25%;
+    transform: rotateX(5deg) translateZ(5px);
+    box-shadow: 0 5px 10px rgba(76, 175, 80, 0.3);
+}
+50% {
+    width: 50%;
+    transform: rotateX(10deg) translateZ(10px);
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.5);
+}
+75% {
+    width: 75%;
+    transform: rotateX(5deg) translateZ(5px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
 }
 100% {
     width: var(--exp-width);
+    transform: rotateX(0deg) translateZ(0);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
 }
 }
 
-/* Clases para aplicar las animaciones */
+/* Animación de ganancia de experiencia 3D */
+@keyframes exp-gain-flash-3d {
+0% {
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    transform: scale(1) rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0);
+}
+25% {
+    background: linear-gradient(90deg, #ffd700, #ffed4a);
+    transform: scale(1.02) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+50% {
+    background: linear-gradient(90deg, #ff9800, #ff6b35);
+    transform: scale(1.05) rotateX(10deg) rotateY(10deg);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.6);
+}
+75% {
+    background: linear-gradient(90deg, #ffd700, #ffed4a);
+    transform: scale(1.02) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+}
+100% {
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    transform: scale(1) rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+}
+
+/* ========== CLASES PARA APLICAR ANIMACIONES 3D ========== */
+
+/* Animaciones básicas mejoradas */
 .pokeball.capturing {
-animation: pokeball-bounce 0.8s ease-in-out;
+animation: pokeball-bounce-3d 1.2s ease-in-out;
+transform-style: preserve-3d;
 }
 
 .pokemon-card.capturing {
-animation: capture-flash 0.8s ease-in-out;
+animation: capture-flash-3d 1.5s ease-in-out;
+transform-style: preserve-3d;
 }
 
 .pokemon-card.appearing {
-animation: pokemon-appear 0.6s ease-out;
+animation: pokemon-appear-3d 1.2s ease-out;
+transform-style: preserve-3d;
+}
+
+.level-up-animation {
+animation: level-up-3d 2s ease-in-out;
+transform-style: preserve-3d;
+}
+
+/* Animaciones avanzadas */
+.rotate-3d {
+animation: rotate-3d-depth 3s ease-in-out infinite;
+transform-style: preserve-3d;
+}
+
+.cube-flip {
+animation: cube-flip-3d 2s ease-in-out infinite;
+transform-style: preserve-3d;
+}
+
+.float-3d {
+animation: float-3d 3s ease-in-out infinite;
+transform-style: preserve-3d;
+}
+
+.pulse-3d {
+animation: pulse-3d 2s ease-in-out infinite;
+transform-style: preserve-3d;
+}
+
+.wave-3d {
+animation: wave-3d 4s ease-in-out infinite;
+transform-style: preserve-3d;
+}
+
+/* Barra de experiencia 3D */
+.exp-fill-3d {
+animation: exp-bar-fill-3d 2s ease-out;
+transform-style: preserve-3d;
+}
+
+.exp-gain-3d {
+animation: exp-gain-flash-3d 1.5s ease-in-out;
+transform-style: preserve-3d;
+}
+
+/* ========== EFECTOS DE HOVER 3D ========== */
+
+.hover-3d {
+transition: all 0.3s ease;
+transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+transform: rotateX(15deg) rotateY(15deg) translateZ(20px) scale(1.05);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hover-flip:hover {
+transform: rotateY(180deg);
+transition: transform 0.8s ease;
+}
+
+.hover-bounce:hover {
+animation: float-3d 1s ease-in-out;
+}
+
+/* ========== CONTENEDORES 3D ========== */
+
+.container-3d {
+perspective: 1500px;
+perspective-origin: center center;
+transform-style: preserve-3d;
+}
+
+.card-3d {
+transform-style: preserve-3d;
+transition: all 0.4s ease;
+backface-visibility: hidden;
+}
+
+.card-3d:hover {
+transform: rotateX(10deg) rotateY(10deg) translateZ(30px);
+}
+
+/* ========== EFECTOS DE PARTÍCULAS MEJORADOS ========== */
+
+.particles-container {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+overflow: hidden;
+perspective: 1000px;
+}
+
+.particle-3d {
+position: absolute;
+width: 6px;
+height: 6px;
+background: radial-gradient(circle, #ffd700, #ff6b35);
+border-radius: 50%;
+animation: capture-particles-3d 2s ease-out infinite;
+transform-style: preserve-3d;
+}
+
+.particle-3d:nth-child(1) { animation-delay: 0s; top: 10%; left: 10%; }
+.particle-3d:nth-child(2) { animation-delay: 0.2s; top: 20%; left: 80%; }
+.particle-3d:nth-child(3) { animation-delay: 0.4s; top: 80%; left: 20%; }
+.particle-3d:nth-child(4) { animation-delay: 0.6s; top: 70%; left: 90%; }
+.particle-3d:nth-child(5) { animation-delay: 0.8s; top: 30%; left: 50%; }
+
+/* ========== ANIMACIONES DE ENTRADA Y SALIDA 3D ========== */
+
+.fade-in-3d {
+animation: pokemon-appear-3d 1s ease-out;
+}
+
+.fade-out-3d {
+animation: pokemon-appear-3d 1s ease-in reverse;
+}
+
+.slide-in-3d {
+animation: rotate-3d-depth 1s ease-out;
+}
+
+.zoom-in-3d {
+animation: pulse-3d 1s ease-out;
+}
+
+/* ========== EFECTOS DE ILUMINACIÓN 3D ========== */
+
+.glow-3d {
+box-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 0 40px rgba(255, 215, 0, 0.4),
+    0 0 60px rgba(255, 215, 0, 0.2);
+}
+
+.shadow-3d {
+box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 20px 60px rgba(0, 0, 0, 0.2),
+    0 30px 90px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== OPTIMIZACIONES DE RENDIMIENTO ========== */
+
+.gpu-accelerated {
+will-change: transform;
+transform: translateZ(0);
+backface-visibility: hidden;
+perspective: 1000px;
+}
+
+/* ========== MEDIA QUERIES PARA ANIMACIONES 3D ========== */
+
+@media (prefers-reduced-motion: reduce) {
+* {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+}
+
+@media (max-width: 768px) {
+.card-3d:hover {
+    transform: rotateX(5deg) rotateY(5deg) translateZ(15px);
+}
+
+.container-3d {
+    perspective: 800px;
+}
 }
